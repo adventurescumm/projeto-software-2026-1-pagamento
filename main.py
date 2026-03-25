@@ -20,9 +20,7 @@ db.init_app(app)
 def create_pagamento():
     data = request.json
 
-    print(f"http://{validador_url}/users/{data["id_usuario"]}")
-
-    response = requests.get(f"http://{validador_url}/users/{data["id_usuario"]}")
+    response = requests.get(f"http://18.228.48.67/users/{data["id_usuario"]}")
 
     if response.status_code == 404:
         raise Exception("Usuário não encontrado!")
