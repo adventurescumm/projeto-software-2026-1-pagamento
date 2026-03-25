@@ -70,7 +70,7 @@ def list_pagamentos():
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
 
-@app.route("/pagamento<uuid:pagamento_id>", ["DELETE"])
+@app.route("/pagamento/<uuid:pagamento_id>", ["DELETE"])
 def delete_pagamentos(pagamento_id):
     pagamento = Pagamento.query.get_or_404(pagamento_id)
 
