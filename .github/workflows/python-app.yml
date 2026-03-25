@@ -47,4 +47,4 @@ jobs:
         script: |
           docker stop pagamento
           docker rm --force pagamento
-          docker run -d --name pagamento -e POSTGRES_URL=postgres-post -e POSTGRES_USER=${{ secrets.POSTGRES_USER }} -e POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} -e VALIDADOR_URL=${{ secrets.VALIDADOR_URL }} --network=rede -p 80:5000 weirdessen/pagamento-ci:${{ github.sha }}
+          docker run -d --name pagamento -e POSTGRES_URL=postgres-users -e POSTGRES_USER=${{ secrets.POSTGRES_USER }} -e POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} -e VALIDADOR_URL=${{ secrets.VALIDADOR_URL }} --network=rede -p 80:5000 weirdessen/pagamento-ci:${{ github.sha }}
