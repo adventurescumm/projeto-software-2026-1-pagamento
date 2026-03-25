@@ -9,7 +9,7 @@ class Pagamento(db.Model):
     valor_total = db.Column(db.Integer, nullable=False, unique=False)
     tipo_pagamento = db.Column(db.String(120), nullable=False, unique=False)
     numero_parcelas = db.Column(db.Integer, nullable=False)
-    valor_parcela = db.Column(db.Integer, nullable=False)
+    valor_parcela = db.Column(valor_total / numero_parcelas)
     data = db.Column(db.DateTime)
     id_usuario = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)

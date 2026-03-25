@@ -30,7 +30,6 @@ def create_pagamento():
         valor_total=data["valor_total"],
         tipo_pagamento=data["tipo_pagamento"],
         numero_parcelas=data["numero_parcelas"],
-        valor_parcela=data["valor_total"] / data["numero_parcelas"],
         id_usuario=data["id_usuario"],
         data=datetime.now()
     )
